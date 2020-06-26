@@ -1,0 +1,5 @@
+bases:
+- ../../apps/ty/overlays
+resources:
+- prod-environment.yaml
+- prod-rolebinding.yaml
