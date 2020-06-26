@@ -36,6 +36,21 @@ spec:
     name: cd-deploy-from-push
     template:
       name: cd-deploy-from-push-template
+  - bindings:
+    - name: github-pr-binding
+    interceptors:
+    - cel:
+        filter: (header.match('X-GitHub-Event', 'pull_request') && body.action ==
+          'opened' || body.action == 'synchronize') && body.pull_request.head.repo.full_name
+          == 'ishitasequeira/taxi'
+    - github:
+        secretRef:
+          namespace: friday-cicd
+          secretKey: webhook-secret-key
+          secretName: webhook-secret-friday-prod-tax-svc
+    name: app-ci-build-from-pr-tax-svc
+    template:
+      name: app-ci-template
 status:
   configuration:
     generatedName: ""

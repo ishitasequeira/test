@@ -1,4 +1,22 @@
 config:
   pipelines:
     name: friday-cicd
+environments:
+- apps:
+  - name: taxi
+    services:
+    - tax-svc
+  name: friday-prod
+  pipelines:
+    integration:
+      bindings:
+      - github-pr-binding
+      template: app-ci-template
+  services:
+  - name: tax-svc
+    source_url: https://github.com/ishitasequeira/taxi.git
+    webhook:
+      secret:
+        name: webhook-secret-friday-prod-tax-svc
+        namespace: friday-cicd
 gitops_url: https://github.com/ishitasequeira/test.git

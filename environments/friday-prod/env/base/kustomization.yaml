@@ -1,0 +1,5 @@
+bases:
+- ../../apps/taxi/overlays
+resources:
+- friday-prod-environment.yaml
+- friday-prod-rolebinding.yaml
