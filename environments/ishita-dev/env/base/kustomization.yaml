@@ -1,0 +1,3 @@
+resources:
+- ishita-dev-environment.yaml
+- ishita-dev-rolebinding.yaml

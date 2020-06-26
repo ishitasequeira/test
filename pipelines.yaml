@@ -1,0 +1,30 @@
+config:
+  argocd:
+    namespace: argocd
+  pipelines:
+    name: ishita-cicd
+environments:
+- apps:
+  - name: taxi
+    services:
+    - taxi-svc
+  name: ishita-dev
+  pipelines:
+    integration:
+      bindings:
+      - github-pr-binding
+      template: app-ci-template
+  services:
+  - name: taxi-svc
+    pipelines:
+      integration:
+        bindings:
+        - ishita-dev-taxi-svc-binding
+        - github-pr-binding
+    source_url: https://github.com/ishitasequeira/taxi.git
+    webhook:
+      secret:
+        name: webhook-secret-ishita-dev-taxi-svc
+        namespace: ishita-cicd
+- name: ishita-stage
+gitops_url: https://github.com/ishitasequeira/test.git

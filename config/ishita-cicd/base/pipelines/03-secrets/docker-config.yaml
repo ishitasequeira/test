@@ -1,0 +1,16 @@
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  creationTimestamp: null
+  name: regcred
+  namespace: ishita-cicd
+spec:
+  encryptedData:
+    .dockerconfigjson: AgCLpkxgjxG069BTN5gk2kebSrsqf2JO0CnMG1w7qU5Lres7WmsTMvBYRA4QkwJF/eNSU3CmUMWTq4wxeH8WzM244BakSndFlXdml6WLBnjnnlPdS9f9ASod+71CSNGJuonP91iBifdm4xu+YCsp8IKAKyCC3YQMXaTqqnzfW1hWNu4+/1t87P0SOOC3+4A6syfeyNgf+r1MKDNl7vccbDpuw7QKOlKo4nRF1k9R8tzTCaZB9ARuq3xayqxGYZhN+pWzPCuRiISEnPWWpDLNSpBRTt0GCZ9P7vOTegAfXeVPxIVUT99VWBfj5q+Tt7Zk+WYqaeVXpH1QOlmRkW7sV/dwc0ap8RPCqc/9TAsKI3e1ajKPH+QGfdvHxJ15BmnoOvw2T28rWdXFlg0KRULaSnKoYCg0ahxcYGGf7GboH7TzpDqCip19O6fhNcTa9qJUgLSSHrHswT4rkuTewbpOT9n/liRAt7wDMJxjsfp4cz+co/MDaB3/KEc8ljQx1UT6MeeqCN59X1qEy6tQXBFSlGi+cPsYgSJvOqfdioENpSoRG2Pjn7tjyKqjh89H8+LuO7LZR+hDJyWQLq6H/PZ28esNI3iL9xONP53CzMMzuVBVmNpKkMh0U4V9O10ApSBhGwxlJJ4sfSOU2FzKmKHOyER2ukbyxmYn4oTNTfAZTYICJPw7OldOHmvfj/npd5H9faaUv6VRAieDSiHbb9hSM3DztOiYkPeI5ZQ2L0pZC0mzpQmZZrv2Sv4hDO0hwjKKdSjingVlUAAs/Icjn3qzCNmiaLo/ZEUukWSmSCKQaitK/RJJno08ZWzlbgvcjuUttv+BI2z3pgI2cISgzGwrSmx7VnuYCskSON7Od7aLECR+H9VpYsZZ0cjjLpJRLWLeCrqU/TiNwixGSMi1J40Km1pGyZohrjWgdM8kSUrNPwqxIhsZfxOctaxqJ+Wr
+  template:
+    metadata:
+      creationTimestamp: null
+      name: regcred
+      namespace: ishita-cicd
+    type: kubernetes.io/dockerconfigjson
+status: {}
