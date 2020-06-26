@@ -1,0 +1,16 @@
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  creationTimestamp: null
+  name: regcred
+  namespace: friday-cicd
+spec:
+  encryptedData:
+    .dockerconfigjson: AgCOdkBkMcf/mS466aWFYjxUb71K7jx0gFT8yDJtVXKYPSkA2QkZzUqnhVM75n5RX+bSIrB4/zntFVsUDC3D63/ToDllbmlQ0WITbZ7o+q7r8f5Bywhr5BPz6mdE4mwiDkYUJbz/Nrz3c/nfwuCxXQ1W/wPa7EOLBQgWfnEFP2G2Ufuzv5gWnROoI1QFDuzN+VR22UA1qba6vAYBO0Y7UqD/4ekAtIsRmjfyoyMeeKbFcb13EgLnfoTqInIVCteR1QhSWZUoWmGTJmyD5dx37CyALlpMYaipakR1zUHgNxTr/G0gNKVRSjwAMPMbIDpPwuodW8MuGIg7mgkU3ZLjFaOw+3jUN6X+Fa3hyuzh/4oCdw/CxSAzEVUG9yS9bxFKraVkWjT8/qEi297uboDH2BkvSKNnu2p6Iu5Mw0W2a/zhETSKLOFXl8EBHAtHEJdL5vbYPwcaFUXyKt44MS6CStDaot2dKVbGi9N/XAC427vzx3zkZDvLwS3mb2Gud+SA3Ds0TMwWdisECrVhy91mwUrk2HrhHALnNUR97Zpg3lQDmG2v7s402oBSjyD78zyf78cmo0PgP1jph1JQt7PPis/zTSC6dmrutrPlUs0b/Wo1uK5Mtbp2QukFL/uODYDaT8w9K8v8MbxblLHmg0gf1cOxr8DkAiGJa4NC8zN6WglAL82y5wo8DbKueu1JAEftiA7DQFbkLqSi9sfGK2Nr0ZC6s5EE7C7Ek0uGD9gNZsQ7JdMD9w2VcIifPlJcHiCZSkN1J/YpFZSbAI3PfPE6D2tl3e/PcGlCm8aSjEcEOEi0Inu41fS0FxtxYq+lMdJU4FEPV31NnyBI/boy3i2jBh6yyIepG5szvXmk/Hkc4B7wNT7k9ClhR5C7+H9sOI2d95zbCuhPmnJRiAv4SI/vl4txoIaestgZGPgnI9XH0RAIGFhW2RG20W2gJBhT
+  template:
+    metadata:
+      creationTimestamp: null
+      name: regcred
+      namespace: friday-cicd
+    type: kubernetes.io/dockerconfigjson
+status: {}
