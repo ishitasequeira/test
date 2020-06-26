@@ -2,24 +2,24 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   creationTimestamp: null
-  name: taxi-svc
+  name: tax-svc
   namespace: friday-prod
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app.kubernetes.io/name: taxi-svc
+      app.kubernetes.io/name: tax-svc
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app.kubernetes.io/name: taxi-svc
+        app.kubernetes.io/name: tax-svc
     spec:
       containers:
       - image: nginxinc/nginx-unprivileged:latest
         imagePullPolicy: Always
-        name: taxi-svc
+        name: tax-svc
         ports:
         - containerPort: 8080
         resources: {}
