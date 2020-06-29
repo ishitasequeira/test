@@ -1,0 +1,13 @@
+apiVersion: triggers.tekton.dev/v1alpha1
+kind: TriggerBinding
+metadata:
+  creationTimestamp: null
+  name: ishita-dev-taxi-svc-binding
+  namespace: ishita-cicd
+spec:
+  params:
+  - name: imageRepo
+    value: quay.io/isequeir/taxi
+  - name: tlsVerify
+    value: "true"
+status: {}
