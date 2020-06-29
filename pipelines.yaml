@@ -1,0 +1,30 @@
+config:
+  argocd:
+    namespace: argocd
+  pipelines:
+    name: test1-cicd
+environments:
+- apps:
+  - name: app-taxi
+    services:
+    - taxi
+  name: test1-dev
+  pipelines:
+    integration:
+      bindings:
+      - github-pr-binding
+      template: app-ci-template
+  services:
+  - name: taxi
+    pipelines:
+      integration:
+        bindings:
+        - test1-dev-taxi-binding
+        - github-pr-binding
+    source_url: https://github.com/ishitasequeira/taxi.git
+    webhook:
+      secret:
+        name: webhook-secret-test1-dev-taxi
+        namespace: test1-cicd
+- name: test1-stage
+gitops_url: https://github.com/ishitasequeira/test.git
