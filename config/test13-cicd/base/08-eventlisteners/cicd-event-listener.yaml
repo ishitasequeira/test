@@ -5,7 +5,6 @@ metadata:
   name: cicd-event-listener
   namespace: test13-cicd
 spec:
-  podTemplate: {}
   serviceAccountName: pipeline
   triggers:
   - bindings:
@@ -37,6 +36,22 @@ spec:
     name: cd-deploy-from-push
     template:
       name: cd-deploy-from-push-template
+  - bindings:
+    - name: test13-dev-taxi-binding
+    - name: github-pr-binding
+    interceptors:
+    - cel:
+        filter: (header.match('X-GitHub-Event', 'pull_request') && body.action ==
+          'opened' || body.action == 'synchronize') && body.pull_request.head.repo.full_name
+          == 'ishitasequeira/taxi'
+    - github:
+        secretRef:
+          namespace: test13-cicd
+          secretKey: webhook-secret-key
+          secretName: webhook-secret-test13-dev-taxi
+    name: app-ci-build-from-pr-taxi
+    template:
+      name: app-ci-template
 status:
   configuration:
     generatedName: ""
