@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  creationTimestamp: null
+  name: test13-stage-taxi
+  namespace: argocd
+spec:
+  destination:
+    namespace: test13-stage
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: environments/test13-stage/apps/taxi/base
+    repoURL: https://github.com/ishitasequeira/test.git
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+status:
+  health: {}
+  summary: {}
+  sync:
+    comparedTo:
+      destination: {}
+      source:
+        repoURL: ""
+    status: ""
