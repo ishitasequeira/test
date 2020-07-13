@@ -1,0 +1,33 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  creationTimestamp: null
+  name: app-ci-pipeline
+  namespace: test13-cicd
+spec:
+  params:
+  - name: REPO
+    type: string
+  - name: COMMIT_SHA
+    type: string
+  - name: TLSVERIFY
+    type: string
+  - name: IMAGE
+    type: string
+  resources:
+  - name: source-repo
+    type: git
+  tasks:
+  - name: build-image
+    params:
+    - name: TLSVERIFY
+      value: $(params.TLSVERIFY)
+    - name: IMAGE
+      value: "true"
+    resources:
+      inputs:
+      - name: source
+        resource: source-repo
+    taskRef:
+      kind: Task
+      name: buildah

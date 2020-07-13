@@ -1,0 +1,17 @@
+apiVersion: triggers.tekton.dev/v1alpha1
+kind: TriggerBinding
+metadata:
+  creationTimestamp: null
+  name: github-pr-binding
+  namespace: test13-cicd
+spec:
+  params:
+  - name: io.openshift.build.commit.ref
+    value: $(body.pull_request.head.ref)
+  - name: io.openshift.build.commit.id
+    value: $(body.pull_request.head.sha)
+  - name: gitrepositoryurl
+    value: $(body.repository.clone_url)
+  - name: fullname
+    value: $(body.repository.full_name)
+status: {}
