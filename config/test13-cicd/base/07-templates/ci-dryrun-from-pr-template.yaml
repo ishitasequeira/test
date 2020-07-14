@@ -32,8 +32,6 @@ spec:
             value: $(params.io.openshift.build.commit.ref)
           - name: url
             value: $(params.gitrepositoryurl)
-          - name: IMAGE
-            value: $(params.imageRepo):$(params.io.openshift.build.commit.ref)-$(params.io.openshift.build.commit.id)
           type: git
       serviceAccountName: pipeline
     status: {}

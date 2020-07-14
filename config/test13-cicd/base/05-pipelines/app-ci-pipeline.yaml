@@ -23,7 +23,7 @@ spec:
     - name: TLSVERIFY
       value: $(params.TLSVERIFY)
     - name: IMAGE
-      value: $(params.imageRepo):$(params.io.openshift.build.commit.ref)-$(params.io.openshift.build.commit.id)
+      value: $(params.IMAGE)
     resources:
       inputs:
       - name: source
