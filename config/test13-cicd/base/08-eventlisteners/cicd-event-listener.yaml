@@ -8,48 +8,38 @@ spec:
   serviceAccountName: pipeline
   triggers:
   - bindings:
-    - name: github-pr-binding
-    interceptors:
-    - cel:
-        filter: (header.match('X-GitHub-Event', 'pull_request') && body.action ==
-          'opened' || body.action == 'synchronize') && body.pull_request.head.repo.full_name
-          == 'ishitasequeira/test'
-    - github:
-        secretRef:
-          namespace: test13-cicd
-          secretKey: webhook-secret-key
-          secretName: gitops-webhook-secret
-    name: ci-dryrun-from-pr
-    template:
-      name: ci-dryrun-from-pr-template
-  - bindings:
     - name: github-push-binding
     interceptors:
-    - cel:
-        filter: (header.match('X-GitHub-Event', 'push') && body.repository.full_name
-          == 'ishitasequeira/test') && body.ref.startsWith('refs/heads/master')
     - github:
         secretRef:
           namespace: test13-cicd
           secretKey: webhook-secret-key
           secretName: gitops-webhook-secret
-    name: cd-deploy-from-push
+    - cel:
+        filter: (header.match('X-GitHub-Event', 'push') && body.repository.full_name
+          == 'ishitasequeira/test')
+        overlays:
+        - expression: split(body.ref,'/')[2]
+          key: ref
+    name: ci-dryrun-from-push
     template:
-      name: cd-deploy-from-push-template
+      name: ci-dryrun-from-push-template
   - bindings:
     - name: test13-dev-taxi-binding
-    - name: github-pr-binding
+    - name: github-push-binding
     interceptors:
-    - cel:
-        filter: (header.match('X-GitHub-Event', 'pull_request') && body.action ==
-          'opened' || body.action == 'synchronize') && body.pull_request.head.repo.full_name
-          == 'ishitasequeira/taxi'
     - github:
         secretRef:
           namespace: test13-cicd
           secretKey: webhook-secret-key
           secretName: webhook-secret-test13-dev-taxi
-    name: app-ci-build-from-pr-taxi
+    - cel:
+        filter: (header.match('X-GitHub-Event', 'push') && body.repository.full_name
+          == 'ishitasequeira/taxi')
+        overlays:
+        - expression: split(body.ref,'/')[2]
+          key: ref
+    name: app-ci-build-from-push-taxi
     template:
       name: app-ci-template
 status:

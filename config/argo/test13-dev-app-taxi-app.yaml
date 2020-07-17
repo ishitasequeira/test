@@ -3,7 +3,7 @@ kind: Application
 metadata:
   creationTimestamp: null
   name: test13-dev-app-taxi
-  namespace: argocd
+  namespace: argo
 spec:
   destination:
     namespace: test13-dev

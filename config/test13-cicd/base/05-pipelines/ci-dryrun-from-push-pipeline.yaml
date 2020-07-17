@@ -2,7 +2,7 @@ apiVersion: tekton.dev/v1beta1
 kind: Pipeline
 metadata:
   creationTimestamp: null
-  name: cd-deploy-from-push-pipeline
+  name: ci-dryrun-from-push-pipeline
   namespace: test13-cicd
 spec:
   resources:
@@ -10,6 +10,9 @@ spec:
     type: git
   tasks:
   - name: apply-source
+    params:
+    - name: DRYRUN
+      value: "true"
     resources:
       inputs:
       - name: source

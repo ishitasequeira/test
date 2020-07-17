@@ -6,16 +6,12 @@ metadata:
   namespace: test13-cicd
 spec:
   params:
-  - name: io.openshift.build.commit.ref
+  - name: gitref
     value: $(body.ref)
-  - name: io.openshift.build.commit.id
+  - name: gitsha
     value: $(body.head_commit.id)
   - name: gitrepositoryurl
     value: $(body.repository.clone_url)
-  - name: io.openshift.build.commit.date
-    value: $(body.head_commit.timestamp)
-  - name: io.openshift.build.commit.message
-    value: $(body.head_commit.message
-  - name: io.openshift.build.commit.author
-    value: $(body.head_commit.author.name)
+  - name: fullname
+    value: $(body.repository.full_name)
 status: {}

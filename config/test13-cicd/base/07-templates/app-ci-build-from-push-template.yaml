@@ -11,9 +11,9 @@ metadata:
 spec:
   params:
   - description: The git branch for this PR.
-    name: io.openshift.build.commit.ref
+    name: gitref
   - description: the specific commit SHA.
-    name: io.openshift.build.commit.id
+    name: gitsha
   - description: The git repository URL.
     name: gitrepositoryurl
   - description: The GitHub repository for this PullRequest.
@@ -33,11 +33,9 @@ spec:
       - name: REPO
         value: $(params.fullname)
       - name: COMMIT_SHA
-        value: $(params.io.openshift.build.commit.id)
+        value: $(params.gitsha)
       - name: TLSVERIFY
         value: $(params.tlsVerify)
-      - name: IMAGE
-        value: $(params.imageRepo):$(params.io.openshift.build.commit.ref)-$(params.io.openshift.build.commit.id)
       pipelineRef:
         name: app-ci-pipeline
       resources:
@@ -45,10 +43,16 @@ spec:
         resourceSpec:
           params:
           - name: revision
-            value: $(params.io.openshift.build.commit.ref)
+            value: $(params.gitref)
           - name: url
             value: $(params.gitrepositoryurl)
           type: git
+      - name: runtime-image
+        resourceSpec:
+          params:
+          - name: url
+            value: $(params.imageRepo):$(params.gitref)-$(params.gitsha)
+          type: image
       serviceAccountName: pipeline
     status: {}
 status: {}

@@ -12,22 +12,23 @@ spec:
     type: string
   - name: TLSVERIFY
     type: string
-  - name: IMAGE
-    type: string
   resources:
   - name: source-repo
     type: git
+  - name: runtime-image
+    type: image
   tasks:
   - name: build-image
     params:
     - name: TLSVERIFY
       value: $(params.TLSVERIFY)
-    - name: IMAGE
-      value: $(params.IMAGE)
     resources:
       inputs:
       - name: source
         resource: source-repo
+      outputs:
+      - name: image
+        resource: runtime-image
     taskRef:
-      kind: Task
+      kind: ClusterTask
       name: buildah
