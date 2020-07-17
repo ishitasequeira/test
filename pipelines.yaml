@@ -1,14 +1,14 @@
 config:
   argocd:
-    namespace: argo
+    namespace: argocd
   pipelines:
-    name: test13-cicd
+    name: test-cicd
 environments:
 - apps:
   - name: app-taxi
     services:
     - taxi
-  name: test13-dev
+  name: test-dev
   pipelines:
     integration:
       bindings:
@@ -19,12 +19,12 @@ environments:
     pipelines:
       integration:
         bindings:
-        - test13-dev-taxi-binding
+        - test-dev-taxi-binding
         - github-push-binding
     source_url: https://github.com/ishitasequeira/taxi.git
     webhook:
       secret:
-        name: webhook-secret-test13-dev-taxi
-        namespace: test13-cicd
-- name: test13-stage
+        name: webhook-secret-test-dev-taxi
+        namespace: test-cicd
+- name: test-stage
 gitops_url: https://github.com/ishitasequeira/test.git
