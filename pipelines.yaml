@@ -1,0 +1,28 @@
+config:
+  argocd:
+    namespace: argocd
+  pipelines:
+    name: sunday-cicd
+environments:
+- apps:
+  - name: app-taxi
+    services:
+    - name: taxi
+      pipelines:
+        integration:
+          bindings:
+          - sunday-dev-app-taxi-taxi-binding
+          - github-push-binding
+      source_url: https://github.com/ishitasequeira/taxi.git
+      webhook:
+        secret:
+          name: webhook-secret-sunday-dev-taxi
+          namespace: sunday-cicd
+  name: sunday-dev
+  pipelines:
+    integration:
+      bindings:
+      - github-push-binding
+      template: app-ci-template
+- name: sunday-stage
+gitops_url: https://github.com/ishitasequeira/test.git
