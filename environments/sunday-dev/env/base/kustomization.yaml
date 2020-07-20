@@ -1,0 +1,3 @@
+resources:
+- sunday-dev-environment.yaml
+- sunday-dev-rolebinding.yaml
