@@ -28,3 +28,4 @@ environments:
         namespace: gitops-cicd
 - name: gitops-stage
 gitops_url: https://github.com/ishitasequeira/test.git
+
