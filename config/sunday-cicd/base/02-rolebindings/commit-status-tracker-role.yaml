@@ -79,7 +79,7 @@ rules:
   - rbac.authorization.k8s.io
   resources:
   - clusterroles
-  - role
+  - roles
   verbs:
   - get
   - bind
