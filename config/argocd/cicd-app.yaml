@@ -6,7 +6,7 @@ metadata:
   namespace: argocd
 spec:
   destination:
-    namespace: sunday-cicd
+    namespace: test-cicd
     server: https://kubernetes.default.svc
   ignoreDifferences:
   - group: argoproj.io
@@ -31,7 +31,7 @@ spec:
     kind: Route
   project: default
   source:
-    path: config/sunday-cicd/overlays
+    path: config/test-cicd/overlays
     repoURL: https://github.com/ishitasequeira/test.git
   syncPolicy:
     automated:

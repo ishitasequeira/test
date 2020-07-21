@@ -2,4 +2,4 @@ resources:
 - argo-app.yaml
 - argocd.yaml
 - cicd-app.yaml
-- sunday-dev-app-taxi-app.yaml
+- test-dev-app-taxi-app.yaml
