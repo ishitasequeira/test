@@ -1,0 +1,16 @@
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  creationTimestamp: null
+  name: commit-status-tracker-git-secret
+  namespace: sunday-cicd
+spec:
+  encryptedData:
+    token: AgBu2h7Y6epdiGtPo8eRrKha0WIVqRdyEKk6TDOtX7TJ6ZeFOJHnyuft0X6JDEYHmUQhjdad6j+nS9yWLFX06Uahf4BK+OQ+kxluJtkxLxUtuBf7cRgcXmOneBx0oTFeYGg6WzP4v2xcoTaFrq9rD6DcUUYYCoBFDeghuedZc8GikHMRd7XEHZb3PJs4ZJL0koKL8NEgewLVIbwB7a5/RBibZlFqxK7mKJq78wytrRrIyl/NuOlIa0gA2J5CjqRzAXBLO7tppfMw60DEnDdxfGmTfrjZX7R986MxMkp11ZaE2lQvErRKvksjhXct7DnRLsHOn+0HSPlufb1UaFm1iNEMdYcBEt45zyDMtgR4wxGtu1lJiES51urXICdwMVD910+He+NB4kZQv4hLioCth9go0CGye34iLFTgdLFoct6J9cOpEBHCAoxLTu9rwCGy8X+AFDS4ty2Cc04OQ7dDOWKfMFxPoPxMDUw26pGpybO+R/qQZvP2zBnhbmEShHISW4Ey/mCNLqQj3D/s19d9YvbSfjhb5PPamJfYPd3zUQd72p8+QJa02AZJwXlkAKStwvK/N1KOaovdPPyU7ddOcxtB3oQiu7Q3LNdOpCvRG81YZaxrhdzQkbX5h+EXwiri0ULmpDgleiE4KNWFEHBlUxH6WamkF9c2dOtwor9zW/iW3UANQx//RnjRxMzxRvGWwVJy8Jb7nc0xAjcHJoPF/cZdfdELnlnx2ZzEAkm+PED2Xtxz3gRScu7G
+  template:
+    metadata:
+      creationTimestamp: null
+      name: commit-status-tracker-git-secret
+      namespace: sunday-cicd
+    type: Opaque
+status: {}

@@ -25,7 +25,7 @@ spec:
     template:
       name: ci-dryrun-from-push-template
   - bindings:
-    - name: sunday-dev-app-taxi-taxi-binding
+    - name: sunday-dev-taxi-binding
     - name: github-push-binding
     interceptors:
     - github:
