@@ -1,3 +1,0 @@
-resources:
-- test-dev-environment.yaml
-- test-dev-rolebinding.yaml
