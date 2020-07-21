@@ -2,7 +2,7 @@ apiVersion: tekton.dev/v1beta1
 kind: Pipeline
 metadata:
   creationTimestamp: null
-  name: ci-dryrun-from-push-pipeline
+  name: ci-dryrun-from-pr-pipeline
   namespace: ishita-cicd
 spec:
   resources:

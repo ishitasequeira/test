@@ -12,3 +12,6 @@ subjects:
 - kind: ServiceAccount
   name: commit-status-tracker
   namespace: ishita-cicd
+- kind: ServiceAccount
+  name: pipeline
+  namespace: ishita-cicd

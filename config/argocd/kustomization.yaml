@@ -1,5 +1,0 @@
-resources:
-- argo-app.yaml
-- argocd.yaml
-- cicd-app.yaml
-- ishita-dev-app-taxi-app.yaml

@@ -1,0 +1,16 @@
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  creationTimestamp: null
+  name: commit-status-tracker-git-secret
+  namespace: ishita-cicd
+spec:
+  encryptedData:
+    token: AgBUudztedEikcW28TFbzA/sqWoov+tHYj3mTXNNBj5/jDUU8S4vtM9aKCHKULZW2fZhNovL0FO4uAwF13tk1JwRb8Oo0eoeqM4xK5ah7avH29fXjIin8Gyl6Oh7zqu1UZBNIojDYxeAioRrYx9NyVtkHY+TWyxmEyUjZH2C2SndYmZWzoXGSHu8dArNZ7PaPR4duEFp8Z0WuaddB/seUlHJ3EZMZsk6rmFD6yWrN3tgnITbO1VT5vruFt2yS/CqIprNRNordRIHmtdrfQmdo3sDClozNuSOnlpSVFM52pBUYth/wDOy4N3aG5BiR/oOmYQwvgHBJmDye6gn8VCsNaG0saN8rNnl0dPWcrws2dNu/zHGtzDAwoq7E/6/3bCPOFvMQNMyLadxCwsFUhvzuk14QEFN/P+4nQQ3UjzhD1dPRHNBzuzpuqkWy9lWXRE7eJ8RXRTd9jnh/qHhh6nixg28U6G16qsbQNoFXnsR6YYXfhHJEcIDNQw7ZVUhAVLBdw3wJ5bcnezuyoyG4G8BnSGW68F7xqPh2e9za8exX3O822FfepEXlWtd6n3YlS3IcuZLuzYRkZ6SLdSvTI0/VtgjTd362KjkBmWROlvWPjn6Dc5dUjCuk/bWzBwJI0QUxk8h2fg8UZOY0yRHSR3bUiu+1sMeavnS49ZoE5qeGYEpk1XP9YAeQruBIdIHmuQwxFgJXZcT9BFfVYox0SO6vDWvaqZMbB4yfj9iSv5ETTZcl+zTGN+QvbQk
+  template:
+    metadata:
+      creationTimestamp: null
+      name: commit-status-tracker-git-secret
+      namespace: ishita-cicd
+    type: Opaque
+status: {}
