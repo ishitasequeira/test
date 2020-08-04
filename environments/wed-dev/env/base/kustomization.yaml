@@ -1,0 +1,3 @@
+resources:
+- wed-dev-environment.yaml
+- wed-dev-rolebinding.yaml
