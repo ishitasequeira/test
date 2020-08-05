@@ -1,4 +1,0 @@
-config:
-  pipelines:
-    name: test-cicd
-gitops_url: https://github.com/ishitasequeira/test.git
